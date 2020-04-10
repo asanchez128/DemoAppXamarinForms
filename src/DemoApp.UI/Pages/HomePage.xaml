@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:MvxContentPage x:TypeArguments="viewModels:HomeViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+    xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+    xmlns:local="clr-namespace:DemoApp.UI.Pages"
+    x:Class="DemoApp.UI.Pages.HomePage"
+    xmlns:viewModels="clr-namespace:DemoApp.Core.ViewModels.Home;assembly=DemoApp.Core"
+                      xmlns:controls="clr-namespace:DemoApp.UI.Controls"
+                      Title="Main page">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>
+            
+            <Label Text="{Binding AndroidId}"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <controls:FormEntry Marca="{Binding Vehiculo1.Marca}" Modelo="{Binding Vehiculo2.Modelo}" Year="{Binding Vehiculo1.Year}">
+                
+            </controls:FormEntry>
+            <controls:FormEntry Marca="{Binding Vehiculo2.Marca}" Modelo="{Binding Vehiculo2.Modelo}" Year="{Binding Vehiculo1.Year}"/>
+            <controls:FormEntry Marca="{Binding Vehiculo3.Marca}" Modelo="{Binding Vehiculo3.Modelo}" Year="{Binding Vehiculo3.Year}"/>
+            <Button Text="Enter" Command="{Binding SendDataCommand}">
+                
+            </Button>
+            <CollectionView ItemsSource="{Binding Vehiculos}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                        <Label Text="{Binding Marca}" Grid.Row="0" Grid.Column="0">
+                            
+                        </Label>
+                            <Label Text="{Binding Modelo}" Grid.Row="0" Grid.Column="1">
+
+                        </Label>
+                            <Label Text="{Binding Year}" Grid.Row="0" Grid.Column="2">
+
+                        </Label>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</views:MvxContentPage>
