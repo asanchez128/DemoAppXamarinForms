@@ -1,18 +1,20 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="DemoApp.UI.Controls.FormEntry">
-  <ContentView.Content>
-      <StackLayout>
-          <Label Text="Marca" />
-            <Entry Text="{Binding Entry}"/>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="DemoApp.UI.Controls.FormEntry"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="FormEntryView"
+    mc:Ignorable="d">
+    <ContentView.Content>
+        <StackLayout>
+            <Label Text="Marca" />
+            <Entry Text="{Binding Source={x:Reference FormEntryView}, Path=Marca}" />
             <Label Text="Modelo" />
-            <Entry Text="{Binding Modelo}"/>
+            <Entry Text="{Binding Source={x:Reference FormEntryView}, Path=Modelo}" />
             <Label Text="Año" />
-            <Entry Text="{Binding Year}"/>
+            <Entry Text="{Binding Source={x:Reference FormEntryView}, Path=Year}" />
         </StackLayout>
-  </ContentView.Content>
+    </ContentView.Content>
 </ContentView>
