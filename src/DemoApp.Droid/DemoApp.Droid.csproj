@@ -66,6 +66,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\AndroidId.cs" />
+    <Compile Include="Helpers\DroidIdActivity.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="Linker\LinkerPleaseInclude.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />

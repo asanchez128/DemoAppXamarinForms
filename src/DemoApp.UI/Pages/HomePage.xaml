@@ -13,6 +13,8 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
+                <Label Text="Android Id:" />
+                <Label Text="{Binding AndroidId}" />
                 <controls:FormEntry
                     Marca="{Binding Vehiculo1.Marca}"
                     Modelo="{Binding Vehiculo1.Modelo}"
